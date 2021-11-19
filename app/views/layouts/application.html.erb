@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyFirstApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="container">
+  <h1> <a href="http://all-free-download.com/free-website-templates/">Twin triangles</a> </h1>
+  <div id="navigation">
+    <ul>
+      <li> <a href="http://all-free-download.com/free-website-templates/">Home</a> </li>
+      <li> <a href="http://all-free-download.com/free-website-templates/">Products</a> </li>
+      <li> <a href="http://all-free-download.com/free-website-templates/">Testimonials</a> </li>
+      <li>
+        <% if session[:admin] %>
+        <a href="/admin/logout">Logout</a>
+        <% else %>
+        <a href="/admin/login">Login</a>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+   <%= yield%>
+  </div>
+  <hr>
+  <div id="footer">
+    <p> My App &copy; your name all rights reserved. </p>
+  </div>
+</div>
+</body>
+</html>
